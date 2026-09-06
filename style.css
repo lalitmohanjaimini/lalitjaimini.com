@@ -5,3 +5,8 @@
 .journey-intro{color:#59636c;font-size:18px}.career-timeline{list-style:none;margin:0;padding:0 0 0 34px;border-left:1px solid #d8b69d}.career-timeline li{position:relative;padding:0 0 34px;margin-bottom:34px;border-bottom:1px solid #e5e5e5}.career-timeline li:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}.career-timeline li:before{content:'';position:absolute;left:-39px;top:8px;width:8px;height:8px;border:1px solid #b7825d;background:#fff;border-radius:50%}.career-timeline li:first-child:before{background:#b7825d}.career-timeline .meta{letter-spacing:1px;margin:0 0 12px}.career-timeline h3{font-size:30px;margin:0 0 10px}.career-timeline .company{font-size:18px;margin:0 0 12px}.career-timeline .text-link{margin-top:4px}.career-link{margin:34px 0 0 34px}@media(max-width:760px){.career-timeline{padding-left:24px}.career-timeline li:before{left:-29px}.career-timeline h3{font-size:27px}.career-link{margin-left:24px}}
 
 h1 .hero-name{display:block;color:#f2f2f2;font:400 17px/1.5 Arial,Helvetica,sans-serif;letter-spacing:.5px;margin-bottom:18px}@media(max-width:760px){h1 .hero-name{font-size:16px}}
+
+/* Reference artwork retains its original proportions on all screens. */
+.hero .identity-art{height:auto;width:100%;margin:0;align-self:center}
+.circuit-artwork{display:block;width:100%;height:auto;aspect-ratio:754/618;object-fit:contain}
+@media(max-width:760px){.hero .identity-art{width:min(100%,480px);margin-inline:auto}}
