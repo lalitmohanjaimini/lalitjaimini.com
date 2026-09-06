@@ -24,8 +24,9 @@ jobs:
           mkdir -p _site
           cp index.html style.css icon.svg 404.html robots.txt sitemap.xml CNAME .nojekyll _site/
           mkdir -p _site/assets
-          cp assets/circuit-artwork.webp _site/assets/
+          cp -R assets/. _site/assets/
           test -s _site/assets/circuit-artwork.webp
+          test -s _site/assets/og-lalit-jaimini-v2.jpg
           test -s _site/index.html
           grep -q 'Engineering depth.' _site/index.html
           grep -q 'class="logo">LJ' _site/index.html
