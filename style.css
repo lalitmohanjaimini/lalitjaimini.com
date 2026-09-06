@@ -22,3 +22,17 @@
 @media(max-width:760px) {
   .hero::before { right: -25%; width: 100%; opacity: .15; }
 }
+
+
+/* Leadership approach */
+.approach{background:#f3efe9;color:#1d2429}
+.approach-head{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:end;padding-bottom:44px}
+.approach-head h2{margin-bottom:0}
+.approach-intro{max-width:560px;margin:0;font:24px/1.5 Georgia,'Times New Roman',serif;color:#4d575e}
+.principle-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #cfc7bf;border-bottom:1px solid #cfc7bf}
+.principle{position:relative;padding:38px 38px 38px 0}
+.principle+.principle{border-left:1px solid #cfc7bf;padding-left:38px}
+.principle-index{display:block;margin-bottom:55px;color:#a66d48;font-size:13px;letter-spacing:2px}
+.principle h3{font-size:29px;margin-bottom:14px}
+.principle p{margin:0;color:#59636a;max-width:340px}
+@media(max-width:760px){.approach-head{grid-template-columns:1fr;gap:16px;padding-bottom:30px}.approach-intro{font-size:21px}.principle-grid{grid-template-columns:1fr}.principle,.principle+.principle{border-left:0;padding:28px 0}.principle+.principle{border-top:1px solid #cfc7bf}.principle-index{margin-bottom:24px}.principle h3{font-size:26px}}
