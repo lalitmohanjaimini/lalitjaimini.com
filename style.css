@@ -36,3 +36,15 @@
 .principle h3{font-size:29px;margin-bottom:14px}
 .principle p{margin:0;color:#59636a;max-width:340px}
 @media(max-width:760px){.approach-head{grid-template-columns:1fr;gap:16px;padding-bottom:30px}.approach-intro{font-size:21px}.principle-grid{grid-template-columns:1fr}.principle,.principle+.principle{border-left:0;padding:28px 0}.principle+.principle{border-top:1px solid #cfc7bf}.principle-index{margin-bottom:24px}.principle h3{font-size:26px}}
+
+
+/* Match the fourth section to the warm leadership background. */
+.journey{
+  background:#f3efe9;
+  border-top:0;
+  box-shadow:0 0 0 100vmax #f3efe9;
+  clip-path:inset(0 -100vmax);
+}
+.journey .career-timeline li{border-bottom-color:#d8d0c8}
+.journey .career-timeline li:before{background:#f3efe9}
+.journey .career-timeline li:first-child:before{background:#b7825d}
