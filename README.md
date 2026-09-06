@@ -1,14 +1,15 @@
 # Lalit Mohan Jaimini
 
-Personal CTO website. Static website files live in `dist/`.
+Personal CTO website with LJ branding, career journey and SEO metadata.
 
-## Publish
+## Publishing
 
-In repository Settings → Pages, choose **GitHub Actions** as the source. Set the custom domain to `lalitjaimini.com`. Then run **Publish portfolio to GitHub Pages** from Actions.
+GitHub Settings → Pages → Source: **Deploy from a branch** → Branch: **main** → Folder: **/(root)**.
 
-Deployment workflow: `.github/workflows/pages.yml`.
+Website files are at the repository root. `.nojekyll` disables Jekyll. No separate custom deployment workflow is needed.
 
-Primary domain: https://lalitjaimini.com/
-Secondary domain: https://lalitmohanjaimini.com/ (configure an HTTPS permanent redirect to the primary domain at your DNS/edge provider).
+Custom domain: `lalitjaimini.com`. Transfer it from `lalitmohanjaimini.github.io` in Pages settings, then attach it here. Keep the old repository as history; it need not be deleted.
 
-See `GITHUB-PAGES.md` for DNS, HTTPS and Google Search Console setup. Google indexing and ranking are not guaranteed.
+Primary URL: https://lalitjaimini.com/
+
+Google Search Console and the secondary-domain permanent redirect still require configuration.
