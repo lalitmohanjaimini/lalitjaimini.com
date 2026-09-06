@@ -48,3 +48,14 @@
 .journey .career-timeline li{border-bottom-color:#d8d0c8}
 .journey .career-timeline li:before{background:#f3efe9}
 .journey .career-timeline li:first-child:before{background:#b7825d}
+
+
+/* Keep the contact action anchored to the right edge on larger screens. */
+@media(min-width:761px){
+  .contact-inner>div:last-child{
+    justify-self:end;
+    width:380px;
+    max-width:100%;
+  }
+  .contact-inner>div:last-child .button{width:100%}
+}
