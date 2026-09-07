@@ -22,12 +22,12 @@ jobs:
       - name: Prepare website files
         run: |
           mkdir -p _site
-          cp index.html style.css icon.svg 404.html robots.txt sitemap.xml CNAME .nojekyll _site/
+          cp index.html style.css icon.svg favicon.ico apple-touch-icon.png site.webmanifest 404.html robots.txt sitemap.xml CNAME .nojekyll _site/
           mkdir -p _site/assets
           cp -R assets/. _site/assets/
           test -s _site/assets/circuit-artwork.webp
           test -s _site/assets/og-lalit-jaimini-v2.jpg
-          test -s _site/index.html
+          test -s _site/index.html\n          test -s _site/favicon.ico\n          test -s _site/site.webmanifest
           grep -q 'Engineering depth.' _site/index.html
           grep -q 'class="logo">LJ' _site/index.html
       - uses: actions/upload-pages-artifact@v4
