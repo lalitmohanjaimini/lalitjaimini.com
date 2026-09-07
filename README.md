@@ -108,6 +108,7 @@ Latest stable release: [v1.7.0](https://github.com/lalitmohanjaimini/lalitjaimin
 - Added direct access to the public production-platform blueprint
 - Added SoftwareSourceCode structured data for technical-project discovery
 - Expanded deployment checks for the featured project
+- Separated the closing contact section with a warm premium surface and contrasting CTA
 
 ## Profiles
 

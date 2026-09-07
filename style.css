@@ -222,3 +222,24 @@
   .architecture-flow{gap:8px}
   .architecture-flow span{padding:7px 9px}
 }
+
+
+/* Visually separate the closing conversation from the dark blueprint. */
+.contact{
+  background:
+    radial-gradient(circle at 83% 20%,rgba(222,169,129,.17),transparent 30%),
+    linear-gradient(135deg,#f4f0eb 0%,#e9e1d9 100%);
+  color:#1d2429;
+  border-top:1px solid #cbb9ab;
+}
+.contact .eyebrow{color:#9e6543}
+.contact em{color:#a86642}
+.contact p:not(.eyebrow){color:#4f5960}
+.contact .button{
+  background:#1d2326;
+  color:#fff;
+  border-color:#1d2326;
+}
+.contact .button:hover{background:#a86642;border-color:#a86642}
+.contact footer{border-top-color:#c9beb5}
+.contact footer>a:last-child{color:#566169}
