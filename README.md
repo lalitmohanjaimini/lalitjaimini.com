@@ -117,7 +117,9 @@ Latest stable release: [v1.7.0](https://github.com/lalitmohanjaimini/lalitjaimin
 - Made the blueprint flow vertical so arrows cannot wrap away from their steps.
 - Darkened copper labels and improved intermediate-width and small-screen layout rules.
 - Updated deployment checks to validate the active social image, JSON-LD datetime, analytics and internal anchors.
-- Direct server HTML and repository source each contain one analytics tag. An extra browser-observed injection remains unconfirmed; the source tag is preserved.
+- Disabled the extra automatic tag setup in Cloudflare; a fresh live response contains one analytics configuration, and GA4 Realtime received visits.
+- Increased mobile content gutters to 24px per side and blueprint flow labels to 14px.
+- Reviewed supplied mobile hero, blueprint and footer screenshots; tablet visual verification remains outstanding.
 
 ## Profiles
 
