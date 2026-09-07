@@ -95,9 +95,9 @@ http://localhost:8080
 
 ## Releases
 
-Stable versions are preserved using Git tags and GitHub Releases.
+Stable versions are preserved using Git tags and GitHub Releases. The README is reviewed and updated with every release.
 
-Latest stable baseline: [v1.5.0](https://github.com/lalitmohanjaimini/lalitjaimini.com/releases/tag/v1.5.0)
+Latest stable release: [v1.6.0](https://github.com/lalitmohanjaimini/lalitjaimini.com/releases/tag/v1.6.0)
 
 ## Profiles
 
