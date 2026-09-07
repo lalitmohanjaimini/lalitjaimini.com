@@ -45,7 +45,7 @@ No framework or build dependency is required.
 ├── favicon.ico
 ├── apple-touch-icon.png
 ├── assets/
-└── .github/workflows/pages.yml
+└── .github/workflows/publish.yml
 ```
 
 ## Deployment
@@ -55,7 +55,7 @@ The website deploys automatically from the `main` branch through GitHub Actions.
 Workflow:
 
 ```text
-.github/workflows/pages.yml
+.github/workflows/publish.yml
 ```
 
 Custom domain:
@@ -71,7 +71,7 @@ The Pages workflow uses the current Node.js 24-compatible GitHub Actions.
 The website includes:
 
 - Canonical URL and `en-IN` language signals
-- Person, ProfilePage, WebSite and ImageObject structured data
+- Person, ProfilePage, WebSite, SoftwareSourceCode and ImageObject structured data
 - Search-engine sitemap and robots configuration
 - Open Graph and Twitter/X social preview metadata
 - Google Search Console domain verification
@@ -98,9 +98,16 @@ http://localhost:8080
 
 Stable versions are preserved using Git tags and GitHub Releases. The README is reviewed and updated with every release.
 
-Latest stable release: [v1.6.0](https://github.com/lalitmohanjaimini/lalitjaimini.com/releases/tag/v1.6.0)
+Latest stable release: [v1.7.0](https://github.com/lalitmohanjaimini/lalitjaimini.com/releases/tag/v1.7.0)
 
-Current development adds a featured engineering blueprint case study covering K3s, observability, runtime security and disaster recovery.
+### v1.7.0 — Featured Engineering Blueprint
+
+- Added a premium K3s engineering case-study section
+- Connected architecture, observability, runtime security and disaster recovery
+- Added responsive desktop, tablet and mobile layouts
+- Added direct access to the public production-platform blueprint
+- Added SoftwareSourceCode structured data for technical-project discovery
+- Expanded deployment checks for the featured project
 
 ## Profiles
 
