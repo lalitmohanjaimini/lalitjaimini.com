@@ -26,7 +26,7 @@ jobs:
           mkdir -p _site/assets
           cp -R assets/. _site/assets/
           test -s _site/assets/circuit-artwork.webp
-          test -s _site/assets/og-lalit-jaimini-v2.jpg
+          test -s _site/assets/social-preview-lalit-jaimini.jpg
           test -s _site/index.html
           test -s _site/favicon.ico
           test -s _site/site.webmanifest
@@ -34,6 +34,28 @@ jobs:
           grep -q 'class="logo">LJ' _site/index.html
           grep -q 'id="blueprint"' _site/index.html
           grep -q 'production-k3s-platform-blueprint' _site/index.html
+      - name: Validate metadata and analytics
+        run: |
+          python3 - <<'PY'
+          import json, re
+          from datetime import datetime
+          from pathlib import Path
+          html = Path("_site/index.html").read_text()
+          blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)
+          assert len(blocks) == 1, "Expected one JSON-LD block"
+          graph = json.loads(blocks[0])["@graph"]
+          profile = next(x for x in graph if x["@type"] == "ProfilePage")
+          value = profile["dateModified"]
+          assert "T" in value and datetime.fromisoformat(value.replace("Z", "+00:00")).tzinfo
+          assert html.count('src="https://www.googletagmanager.com/gtag/js?id=') == 1
+          assert html.count("gtag('config', 'G-5Q86K8TXZN')") == 1
+          image = re.search(r'<meta property="og:image" content="https://lalitjaimini.com/([^"]+)"', html).group(1)
+          assert Path("_site", image).is_file(), "Social preview asset missing"
+          ids = re.findall(r'\bid="([^"]+)"', html)
+          assert len(ids) == len(set(ids)), "Duplicate HTML ids"
+          assert all(x in ids for x in re.findall(r'href="#([^"]+)"', html)), "Broken section link"
+          print("Metadata, analytics, social asset and anchors validated")
+          PY
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site

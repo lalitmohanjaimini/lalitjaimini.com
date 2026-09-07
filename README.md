@@ -111,6 +111,14 @@ Latest stable release: [v1.7.0](https://github.com/lalitmohanjaimini/lalitjaimin
 - Applied a warm premium surface to the engineering blueprint for clear section rhythm
 - Kept the final Connect section and footer on a unified dark closing surface
 
+## Post-v1.7.0 corrections
+
+- Separated the Flitpay role dates from company founding and incorporation.
+- Made the blueprint flow vertical so arrows cannot wrap away from their steps.
+- Darkened copper labels and improved intermediate-width and small-screen layout rules.
+- Updated deployment checks to validate the active social image, JSON-LD datetime, analytics and internal anchors.
+- Direct server HTML and repository source each contain one analytics tag. An extra browser-observed injection remains unconfirmed; the source tag is preserved.
+
 ## Profiles
 
 - [Portfolio](https://lalitjaimini.com/)
