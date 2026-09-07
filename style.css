@@ -241,5 +241,13 @@
   border-color:#1d2326;
 }
 .contact .button:hover{background:#a86642;border-color:#a86642}
-.contact footer{border-top-color:#c9beb5}
-.contact footer>a:last-child{color:#566169}
+.contact footer{
+  position:relative;
+  background:#1d2326;
+  color:#fff;
+  border-top-color:#465052;
+  box-shadow:0 0 0 100vmax #1d2326;
+  clip-path:inset(0 -100vmax);
+}
+.contact footer .brand{color:#fff}
+.contact footer>a:last-child{color:#c7ccce}
