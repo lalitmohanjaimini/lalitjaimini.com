@@ -104,13 +104,13 @@
 }
 
 
-/* Featured engineering blueprint */
+/* Featured engineering blueprint — warm surface between white work and dark contact. */
 .blueprint{
   position:relative;
   isolation:isolate;
   overflow:hidden;
-  background:#1d2326;
-  color:#f8f7f4;
+  background:#f3efe9;
+  color:#1d2429;
 }
 .blueprint::after{
   content:"";
@@ -119,7 +119,8 @@
   pointer-events:none;
   inset:0 0 0 52%;
   background:url("/assets/circuit-artwork.webp") center / cover no-repeat;
-  opacity:.1;
+  opacity:.08;
+  mix-blend-mode:multiply;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 38%);
   mask-image:linear-gradient(90deg,transparent,#000 38%);
 }
@@ -130,17 +131,24 @@
   gap:90px;
   align-items:end;
   padding-bottom:48px;
-  border-bottom:1px solid #495052;
+  border-bottom:1px solid #c9bfb6;
 }
 .blueprint-head h2{margin:0}
-.blueprint-head em{color:#e3aa82}
+.blueprint-head em{color:#a86642}
 .blueprint-intro{
   max-width:620px;
   margin:0 0 28px;
-  color:#d1d6d8;
+  color:#4f5960;
   font:22px/1.55 Georgia,'Times New Roman',serif;
 }
-.blueprint-button{padding:14px 22px;font-size:15px}
+.blueprint-button{
+  padding:14px 22px;
+  font-size:15px;
+  background:#1d2326;
+  color:#fff;
+  border-color:#1d2326;
+}
+.blueprint-button:hover{background:#a86642;border-color:#a86642}
 .blueprint-grid{
   display:grid;
   grid-template-columns:.86fr 1.14fr;
@@ -148,12 +156,12 @@
   padding-block:48px 42px;
 }
 .blueprint-architecture{
-  border:1px solid #50585b;
+  border:1px solid #c5bbb2;
   padding:30px;
   align-self:start;
-  background:rgba(22,29,32,.72);
+  background:rgba(255,255,255,.42);
 }
-.blueprint-architecture>.meta{margin:0 0 25px;color:#e1a77e;letter-spacing:1.8px}
+.blueprint-architecture>.meta{margin:0 0 25px;color:#9e6543;letter-spacing:1.8px}
 .architecture-flow{
   display:flex;
   align-items:center;
@@ -161,41 +169,43 @@
   gap:11px;
   padding-bottom:27px;
   margin-bottom:24px;
-  border-bottom:1px solid #41494c;
+  border-bottom:1px solid #cfc5bc;
 }
 .architecture-flow span{
-  border:1px solid #677073;
+  border:1px solid #b9aea5;
   padding:8px 11px;
-  color:#eef0f1;
+  color:#263139;
+  background:rgba(255,255,255,.36);
   font-size:12px;
   line-height:1.2;
 }
-.architecture-flow i{color:#d99b70;font-style:normal}
-.blueprint-architecture>p:last-child{margin:0;color:#abb3b6}
-.blueprint-pillars{border-top:1px solid #50585b}
+.architecture-flow i{color:#a86642;font-style:normal}
+.blueprint-architecture>p:last-child{margin:0;color:#59636a}
+.blueprint-pillars{border-top:1px solid #c5bbb2}
 .blueprint-pillars article{
   display:grid;
   grid-template-columns:48px 220px 1fr;
   gap:22px;
   align-items:start;
   padding:24px 0;
-  border-bottom:1px solid #50585b;
+  border-bottom:1px solid #c5bbb2;
 }
-.blueprint-pillars article>span{color:#dca078;font-size:12px;letter-spacing:2px}
-.blueprint-pillars h3{margin:0;font-size:24px;color:#fff}
-.blueprint-pillars p{margin:0;color:#aeb6b9}
+.blueprint-pillars article>span{color:#a86642;font-size:12px;letter-spacing:2px}
+.blueprint-pillars h3{margin:0;font-size:24px;color:#1d2429}
+.blueprint-pillars p{margin:0;color:#59636a}
 .blueprint-stack{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
   padding-top:28px;
-  border-top:1px solid #495052;
+  border-top:1px solid #c9bfb6;
 }
 .blueprint-stack span{
-  border:1px solid #566063;
+  border:1px solid #b9aea5;
   border-radius:999px;
   padding:7px 13px;
-  color:#cbd0d2;
+  color:#4f5960;
+  background:rgba(255,255,255,.3);
   font-size:12px;
   line-height:1.2;
 }
@@ -206,7 +216,7 @@
 }
 @media(max-width:760px){
   nav{gap:9px;font-size:13px}
-  .blueprint::after{inset:0 -30% 0 18%;opacity:.08}
+  .blueprint::after{inset:0 -30% 0 18%;opacity:.06}
   .blueprint-head,.blueprint-grid{grid-template-columns:1fr;gap:25px}
   .blueprint-head{padding-bottom:34px}
   .blueprint-intro{font-size:19px}
@@ -223,31 +233,28 @@
   .architecture-flow span{padding:7px 9px}
 }
 
-
-/* Visually separate the closing conversation from the dark blueprint. */
+/* The final conversation and footer remain a single dark closing section. */
 .contact{
-  background:
-    radial-gradient(circle at 83% 20%,rgba(222,169,129,.17),transparent 30%),
-    linear-gradient(135deg,#f4f0eb 0%,#e9e1d9 100%);
-  color:#1d2429;
-  border-top:1px solid #cbb9ab;
+  background:#1d2326;
+  color:#fff;
+  border-top:1px solid #42494b;
 }
-.contact .eyebrow{color:#9e6543}
-.contact em{color:#a86642}
-.contact p:not(.eyebrow){color:#4f5960}
+.contact .eyebrow{color:#e6ab80}
+.contact em{color:#e2ab83}
+.contact p:not(.eyebrow){color:#d3d8da}
 .contact .button{
-  background:#1d2326;
-  color:#fff;
-  border-color:#1d2326;
+  background:#fff;
+  color:#1d2429;
+  border-color:#fff;
 }
-.contact .button:hover{background:#a86642;border-color:#a86642}
+.contact .button:hover{background:#f1cfb5;border-color:#f1cfb5}
 .contact footer{
-  position:relative;
-  background:#1d2326;
+  position:static;
+  background:transparent;
   color:#fff;
-  border-top-color:#465052;
-  box-shadow:0 0 0 100vmax #1d2326;
-  clip-path:inset(0 -100vmax);
+  border-top-color:#42494b;
+  box-shadow:none;
+  clip-path:none;
 }
 .contact footer .brand{color:#fff}
 .contact footer>a:last-child{color:#c7ccce}
