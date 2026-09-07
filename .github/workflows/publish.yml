@@ -32,6 +32,8 @@ jobs:
           test -s _site/site.webmanifest
           grep -q 'Engineering depth.' _site/index.html
           grep -q 'class="logo">LJ' _site/index.html
+          grep -q 'id="blueprint"' _site/index.html
+          grep -q 'production-k3s-platform-blueprint' _site/index.html
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site

@@ -15,6 +15,7 @@ A premium, responsive technology-leadership portfolio focused on:
 - Cloud infrastructure, Kubernetes and DevOps
 - Technical strategy and engineering leadership
 - Professional journey and selected work
+- Featured K3s engineering blueprint case study
 - Clear business context behind technology decisions
 
 ## Technology
@@ -98,6 +99,8 @@ http://localhost:8080
 Stable versions are preserved using Git tags and GitHub Releases. The README is reviewed and updated with every release.
 
 Latest stable release: [v1.6.0](https://github.com/lalitmohanjaimini/lalitjaimini.com/releases/tag/v1.6.0)
+
+Current development adds a featured engineering blueprint case study covering K3s, observability, runtime security and disaster recovery.
 
 ## Profiles
 

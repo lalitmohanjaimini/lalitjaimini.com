@@ -102,3 +102,123 @@
   .work-card .meta{margin-bottom:3px}
   .work-focus{margin-top:22px}
 }
+
+
+/* Featured engineering blueprint */
+.blueprint{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:#1d2326;
+  color:#f8f7f4;
+}
+.blueprint::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  pointer-events:none;
+  inset:0 0 0 52%;
+  background:url("/assets/circuit-artwork.webp") center / cover no-repeat;
+  opacity:.1;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 38%);
+  mask-image:linear-gradient(90deg,transparent,#000 38%);
+}
+.blueprint-inner{position:relative;z-index:1}
+.blueprint-head{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:90px;
+  align-items:end;
+  padding-bottom:48px;
+  border-bottom:1px solid #495052;
+}
+.blueprint-head h2{margin:0}
+.blueprint-head em{color:#e3aa82}
+.blueprint-intro{
+  max-width:620px;
+  margin:0 0 28px;
+  color:#d1d6d8;
+  font:22px/1.55 Georgia,'Times New Roman',serif;
+}
+.blueprint-button{padding:14px 22px;font-size:15px}
+.blueprint-grid{
+  display:grid;
+  grid-template-columns:.86fr 1.14fr;
+  gap:64px;
+  padding-block:48px 42px;
+}
+.blueprint-architecture{
+  border:1px solid #50585b;
+  padding:30px;
+  align-self:start;
+  background:rgba(22,29,32,.72);
+}
+.blueprint-architecture>.meta{margin:0 0 25px;color:#e1a77e;letter-spacing:1.8px}
+.architecture-flow{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:11px;
+  padding-bottom:27px;
+  margin-bottom:24px;
+  border-bottom:1px solid #41494c;
+}
+.architecture-flow span{
+  border:1px solid #677073;
+  padding:8px 11px;
+  color:#eef0f1;
+  font-size:12px;
+  line-height:1.2;
+}
+.architecture-flow i{color:#d99b70;font-style:normal}
+.blueprint-architecture>p:last-child{margin:0;color:#abb3b6}
+.blueprint-pillars{border-top:1px solid #50585b}
+.blueprint-pillars article{
+  display:grid;
+  grid-template-columns:48px 220px 1fr;
+  gap:22px;
+  align-items:start;
+  padding:24px 0;
+  border-bottom:1px solid #50585b;
+}
+.blueprint-pillars article>span{color:#dca078;font-size:12px;letter-spacing:2px}
+.blueprint-pillars h3{margin:0;font-size:24px;color:#fff}
+.blueprint-pillars p{margin:0;color:#aeb6b9}
+.blueprint-stack{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  padding-top:28px;
+  border-top:1px solid #495052;
+}
+.blueprint-stack span{
+  border:1px solid #566063;
+  border-radius:999px;
+  padding:7px 13px;
+  color:#cbd0d2;
+  font-size:12px;
+  line-height:1.2;
+}
+@media(max-width:1100px){
+  .blueprint-head{gap:45px}
+  .blueprint-grid{gap:40px}
+  .blueprint-pillars article{grid-template-columns:36px 175px 1fr;gap:14px}
+}
+@media(max-width:760px){
+  nav{gap:9px;font-size:13px}
+  .blueprint::after{inset:0 -30% 0 18%;opacity:.08}
+  .blueprint-head,.blueprint-grid{grid-template-columns:1fr;gap:25px}
+  .blueprint-head{padding-bottom:34px}
+  .blueprint-intro{font-size:19px}
+  .blueprint-grid{padding-block:34px 28px}
+  .blueprint-architecture{padding:23px}
+  .blueprint-pillars article{grid-template-columns:34px 1fr;gap:10px 12px}
+  .blueprint-pillars article p{grid-column:2}
+  .blueprint-pillars h3{font-size:23px}
+  .blueprint-stack{padding-top:23px}
+}
+@media(max-width:470px){
+  nav a[href="#blueprint"]{display:none}
+  .architecture-flow{gap:8px}
+  .architecture-flow span{padding:7px 9px}
+}
