@@ -32,7 +32,7 @@
 .principle-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #cfc7bf;border-bottom:1px solid #cfc7bf}
 .principle{position:relative;padding:38px 38px 38px 0}
 .principle+.principle{border-left:1px solid #cfc7bf;padding-left:38px}
-.principle-index{display:block;margin-bottom:55px;color:#a66d48;font-size:13px;letter-spacing:2px}
+.principle-index{display:block;margin-bottom:55px;color:#895234;font-size:13px;letter-spacing:2px}
 .principle h3{font-size:29px;margin-bottom:14px}
 .principle p{margin:0;color:#59636a;max-width:340px}
 @media(max-width:760px){.approach-head{grid-template-columns:1fr;gap:16px;padding-bottom:30px}.approach-intro{font-size:21px}.principle-grid{grid-template-columns:1fr}.principle,.principle+.principle{border-left:0;padding:28px 0}.principle+.principle{border-top:1px solid #cfc7bf}.principle-index{margin-bottom:24px}.principle h3{font-size:26px}}

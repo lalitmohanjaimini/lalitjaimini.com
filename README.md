@@ -98,7 +98,14 @@ http://localhost:8080
 
 Stable versions are preserved using Git tags and GitHub Releases. The README is reviewed and updated with every release.
 
-Latest stable release: [v1.7.0](https://github.com/lalitmohanjaimini/lalitjaimini.com/releases/tag/v1.7.0)
+Latest stable release: [v1.7.2](https://github.com/lalitmohanjaimini/lalitjaimini.com/releases/tag/v1.7.2)
+
+### v1.7.2 — Career Accuracy and Accessibility
+
+- Corrected the Flit Webs progression to Senior Software Engineer (Nov 2015–May 2016) and Chief Technology Officer (Jun 2016–Present)
+- Added the official Flit Webs website to the Journey, Selected Work and Person structured data
+- Improved Leadership principle-label contrast for PageSpeed accessibility
+- Refreshed the stylesheet cache key and structured-data modification timestamp
 
 ### v1.7.0 — Featured Engineering Blueprint
 
