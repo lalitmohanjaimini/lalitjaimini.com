@@ -98,7 +98,17 @@ http://localhost:8080
 
 Stable versions are preserved using Git tags and GitHub Releases. The README is reviewed and updated with every release.
 
-Latest stable release: [v1.7.2](https://github.com/lalitmohanjaimini/lalitjaimini.com/releases/tag/v1.7.2)
+Latest stable release: [v1.7.3](https://github.com/lalitmohanjaimini/lalitjaimini.com/releases/tag/v1.7.3)
+
+### v1.7.3 — Performance, Analytics and Edge Security
+
+- Removed the duplicate repository-level GA4 loader and retained Cloudflare Google Tag Gateway as the single active source
+- Added a guarded, deferred GA4 fallback for continuity and future CSP hardening
+- Preloaded the hero circuit artwork for faster LCP discovery
+- Added deployment checks that prevent analytics duplication from returning
+- Verified live HSTS, frame protection, COOP, no-sniff, referrer and permissions-policy headers
+- Achieved fresh PageSpeed scores of 99/100/100/100 on mobile and 100/100/100/100 on desktop
+- Preserved Cloudflare RUM and bot protection for real-user visibility and security
 
 ### v1.7.2 — Career Accuracy and Accessibility
 
