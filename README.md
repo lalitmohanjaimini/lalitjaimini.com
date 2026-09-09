@@ -130,6 +130,7 @@ Latest stable release: [v1.7.2](https://github.com/lalitmohanjaimini/lalitjaimin
 - Removed the duplicate repository-level Google tag so Cloudflare Google Tag Gateway is the only GA4 loader.
 - Preloaded the hero circuit artwork with high fetch priority to improve LCP discovery.
 - Strengthened deployment validation to prevent analytics duplication from returning.
+- Added a deferred external GA4 fallback that stays inactive while Cloudflare Gateway owns the page, allowing a later switch to strict CSP without losing analytics.
 
 ## Profiles
 

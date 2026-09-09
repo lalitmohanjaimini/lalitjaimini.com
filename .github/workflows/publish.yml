@@ -27,6 +27,7 @@ jobs:
           cp -R assets/. _site/assets/
           test -s _site/assets/circuit-artwork.webp
           test -s _site/assets/social-preview-lalit-jaimini.jpg
+          test -s _site/assets/analytics.js
           test -s _site/index.html
           test -s _site/favicon.ico
           test -s _site/site.webmanifest
@@ -52,6 +53,10 @@ jobs:
           assert html.count('googletagmanager.com/gtag/js') == 0, "Direct GA loader duplicates Cloudflare Gateway"
           assert html.count("gtag('config'") == 0, "Direct GA config duplicates Cloudflare Gateway"
           assert html.count('fetchpriority="high"') == 1, "Hero LCP preload missing"
+          assert html.count('src="/assets/analytics.js"') == 1, "Deferred analytics fallback missing"
+          analytics = Path("_site/assets/analytics.js").read_text()
+          assert analytics.count("G-5Q86K8TXZN") == 1, "GA4 measurement ID must appear once in fallback"
+          assert "google_tags_first_party" in analytics, "Cloudflare Gateway duplication guard missing"
           image = re.search(r'<meta property="og:image" content="https://lalitjaimini.com/([^"]+)"', html).group(1)
           assert Path("_site", image).is_file(), "Social preview asset missing"
           ids = re.findall(r'\bid="([^"]+)"', html)
