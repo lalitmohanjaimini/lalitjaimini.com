@@ -24,7 +24,7 @@ A premium, responsive technology-leadership portfolio focused on:
 - Responsive CSS
 - GitHub Pages
 - GitHub Actions
-- Google Analytics 4
+- Google Analytics 4 through Cloudflare Google Tag Gateway
 - Schema.org structured data
 - Open Graph and social sharing metadata
 
@@ -76,7 +76,7 @@ The website includes:
 - Open Graph and Twitter/X social preview metadata
 - Google Search Console domain verification
 - Submitted and successfully processed sitemap
-- Google Analytics measurement
+- Single-source Google Analytics measurement through Cloudflare Google Tag Gateway
 
 Sitemap: [lalitjaimini.com/sitemap.xml](https://lalitjaimini.com/sitemap.xml)
 
@@ -127,6 +127,9 @@ Latest stable release: [v1.7.2](https://github.com/lalitmohanjaimini/lalitjaimin
 - Disabled the extra automatic tag setup in Cloudflare; a fresh live response contains one analytics configuration, and GA4 Realtime received visits.
 - Increased mobile content gutters to 24px per side and blueprint flow labels to 14px.
 - Reviewed supplied mobile hero, blueprint and footer screenshots; tablet visual verification remains outstanding.
+- Removed the duplicate repository-level Google tag so Cloudflare Google Tag Gateway is the only GA4 loader.
+- Preloaded the hero circuit artwork with high fetch priority to improve LCP discovery.
+- Strengthened deployment validation to prevent analytics duplication from returning.
 
 ## Profiles
 

@@ -47,14 +47,17 @@ jobs:
           profile = next(x for x in graph if x["@type"] == "ProfilePage")
           value = profile["dateModified"]
           assert "T" in value and datetime.fromisoformat(value.replace("Z", "+00:00")).tzinfo
-          assert html.count('src="https://www.googletagmanager.com/gtag/js?id=') == 1
-          assert html.count("gtag('config', 'G-5Q86K8TXZN')") == 1
+          # Cloudflare Google Tag Gateway is the single GA4 loader at the edge.
+          # The repository must not ship a second direct Google tag.
+          assert html.count('googletagmanager.com/gtag/js') == 0, "Direct GA loader duplicates Cloudflare Gateway"
+          assert html.count("gtag('config'") == 0, "Direct GA config duplicates Cloudflare Gateway"
+          assert html.count('fetchpriority="high"') == 1, "Hero LCP preload missing"
           image = re.search(r'<meta property="og:image" content="https://lalitjaimini.com/([^"]+)"', html).group(1)
           assert Path("_site", image).is_file(), "Social preview asset missing"
           ids = re.findall(r'\bid="([^"]+)"', html)
           assert len(ids) == len(set(ids)), "Duplicate HTML ids"
           assert all(x in ids for x in re.findall(r'href="#([^"]+)"', html)), "Broken section link"
-          print("Metadata, analytics, social asset and anchors validated")
+          print("Metadata, single-source edge analytics, LCP preload, social asset and anchors validated")
           PY
       - uses: actions/upload-pages-artifact@v5
         with:
