@@ -77,6 +77,7 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
+          include-hidden-files: true
       - name: Deploy website
         id: deployment
         uses: actions/deploy-pages@v5
