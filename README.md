@@ -40,6 +40,7 @@ No framework or build dependency is required.
 ├── CNAME
 ├── sitemap.xml
 ├── robots.txt
+├── .well-known/security.txt
 ├── site.webmanifest
 ├── icon.svg
 ├── favicon.ico
@@ -77,6 +78,9 @@ The website includes:
 - Google Search Console domain verification
 - Submitted and successfully processed sitemap
 - Single-source Google Analytics measurement through Cloudflare Google Tag Gateway
+- RFC 9116 security disclosure metadata at the standard well-known endpoint
+
+Security disclosure: [lalitjaimini.com/.well-known/security.txt](https://lalitjaimini.com/.well-known/security.txt)
 
 Sitemap: [lalitjaimini.com/sitemap.xml](https://lalitjaimini.com/sitemap.xml)
 

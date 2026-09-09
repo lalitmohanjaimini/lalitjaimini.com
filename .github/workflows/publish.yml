@@ -23,6 +23,8 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html style.css icon.svg favicon.ico apple-touch-icon.png site.webmanifest 404.html robots.txt sitemap.xml CNAME .nojekyll _site/
+          mkdir -p _site/.well-known
+          cp .well-known/security.txt _site/.well-known/security.txt
           mkdir -p _site/assets
           cp -R assets/. _site/assets/
           test -s _site/assets/circuit-artwork.webp
@@ -31,6 +33,49 @@ jobs:
           test -s _site/index.html
           test -s _site/favicon.ico
           test -s _site/site.webmanifest
+          test -s _site/.well-known/security.txt
+          grep -q '^Contact: https://' _site/.well-known/security.txt
+          grep -q '^Expires: ' _site/.well-known/security.txt
+          grep -q '^Canonical: https://lalitjaimini.com/.well-known/security.txt
+          grep -q 'class="logo">LJ' _site/index.html
+          grep -q 'id="blueprint"' _site/index.html
+          grep -q 'production-k3s-platform-blueprint' _site/index.html
+      - name: Validate metadata and analytics
+        run: |
+          python3 - <<'PY'
+          import json, re
+          from datetime import datetime
+          from pathlib import Path
+          html = Path("_site/index.html").read_text()
+          blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)
+          assert len(blocks) == 1, "Expected one JSON-LD block"
+          graph = json.loads(blocks[0])["@graph"]
+          profile = next(x for x in graph if x["@type"] == "ProfilePage")
+          value = profile["dateModified"]
+          assert "T" in value and datetime.fromisoformat(value.replace("Z", "+00:00")).tzinfo
+          # Cloudflare Google Tag Gateway is the single GA4 loader at the edge.
+          # The repository must not ship a second direct Google tag.
+          assert html.count('googletagmanager.com/gtag/js') == 0, "Direct GA loader duplicates Cloudflare Gateway"
+          assert html.count("gtag('config'") == 0, "Direct GA config duplicates Cloudflare Gateway"
+          assert html.count('fetchpriority="high"') == 1, "Hero LCP preload missing"
+          assert html.count('src="/assets/analytics.js"') == 1, "Deferred analytics fallback missing"
+          analytics = Path("_site/assets/analytics.js").read_text()
+          assert analytics.count("G-5Q86K8TXZN") == 1, "GA4 measurement ID must appear once in fallback"
+          assert "google_tags_first_party" in analytics, "Cloudflare Gateway duplication guard missing"
+          image = re.search(r'<meta property="og:image" content="https://lalitjaimini.com/([^"]+)"', html).group(1)
+          assert Path("_site", image).is_file(), "Social preview asset missing"
+          ids = re.findall(r'\bid="([^"]+)"', html)
+          assert len(ids) == len(set(ids)), "Duplicate HTML ids"
+          assert all(x in ids for x in re.findall(r'href="#([^"]+)"', html)), "Broken section link"
+          print("Metadata, single-source edge analytics, LCP preload, social asset and anchors validated")
+          PY
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v5
+ _site/.well-known/security.txt
           grep -q 'Engineering depth.' _site/index.html
           grep -q 'class="logo">LJ' _site/index.html
           grep -q 'id="blueprint"' _site/index.html
